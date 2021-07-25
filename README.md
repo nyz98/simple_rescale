@@ -7,7 +7,7 @@ A simple rescale script that helps resize all images in directory according to d
 * cd into this directory
 * Start with command line: python rescale.py 'directory' 'save directory' 'scale' 'org_size'
 
-  * directory: directory containing images to be rescaled (default to image_folder)
-  * save_directory: directory to save rescaled images (default to rescaled_image_folder)
+  * directory: directory containing images to be rescaled
+  * save_directory: directory to save rescaled images (default to image directory)
   * scale: pixel to centimetre scale (px/cm) (default to 68.3)
   * org_size: save original image dimensions in filename if True

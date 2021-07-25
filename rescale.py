@@ -39,9 +39,9 @@ def img_resize(img_dir, save_dir, scale, og_size):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("-d", "--dir", required=True, default="image_folder"
+    ap.add_argument("-d", "--dir", required=True,
                     help="path to the image directory")
-    ap.add_argument("-a", "--save_dir", type=str, default="rescaled_image_folder",
+    ap.add_argument("-a", "--save_dir", type=str, default=None,
                     help="path to save rescale image directory (default to image directory)")
     ap.add_argument("-s", "--scale", type=str, default="68.3",
                     help="resize scale (px/cm)")
@@ -49,6 +49,10 @@ if __name__ == "__main__":
                     help="whether to save original size at the end of filename")
 
     args = vars(ap.parse_args())
+
+    if args["save_dir"] is None:
+        if os.isdir(args["save_dir"] == False):
+            args["save_dir"] = args["dir"]
 
     root_dir = sys.path[0]
     img_dir = os.path.join(root_dir, args["dir"])
